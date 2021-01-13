@@ -4,7 +4,7 @@
         1. "Find" method will loop through the string and find the substrings with the query length
         2. "Helper" method will return a hashMap of the characters in the string and their quantity
         3. "compare" method will check if the two strings are anagrams by comparing the hashmaps of the strings returned by "Helper" function
-    **O(a*b^2)**   a= length of string1 b = length of query
+**O(a*b^2)** a= length of string1 b = length of query
 
 ## Task2
     To spiral from the given cell in the given space:
