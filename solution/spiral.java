@@ -1,8 +1,8 @@
 
 package solution;
-import java.util.ArrayList;
+
 import java.util.Scanner;
-import java.util.stream.*;
+
 
 public class spiral {
     int x_limit;
