@@ -4,7 +4,7 @@
         1. "Find" method will loop through the string and find the substrings with the query length
         2. "Helper" method will return a hashMap of the characters in the string and their quantity
         3. "compare" method will check if the two strings are anagrams by comparing the hashmaps of the strings returned by "Helper" function
-**O(a*b^2)**     where a is length of string and b is length of query
+**o(a*b+b)**     where a is length of string and b is length of query
 
 ## Task2
     To spiral from the given cell in the given space:
@@ -13,5 +13,12 @@
         3. considering the current distance will find the next distance and call the function again to repeat the above steps
         4. if the cell is not in the given space will ignore the cell and move to the next one
         5. spiral is done when all of the cells are visited
+**o(b^2)**      where b = max(grid.length, grid.width)
 
+## Task3
+    To find the actual time between 3 inputs in different test cases:
+        1. input needs to be in the "HH:mm" format 
+        2. will First sort the times in ascending order
+        3. two times can have two differences (H2-H1) or (12 -(H2-H1))
+        4. will check the possilbe cases with the differences to find the actual time
 

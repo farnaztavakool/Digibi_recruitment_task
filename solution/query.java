@@ -10,10 +10,25 @@ public class query {
      * @return int
      */
     public int find(String s1, String s2) {
+
+        if (s1.length() == 0 || s2.length() == 0 || s1.length() < s2.length()) return 0;
+
+        int[] s1_map = helper(s1.substring(0, s2.length()));
+        int[] s2_map = helper(s2);
+
         int count = 0;
         for (int i = 0; i + s2.length() <= s1.length(); i++) {
-            if (compare(s1.substring(i, i + s2.length()), s2))
+            if (compare(s1_map,s2_map))
                 count++;
+            int val = 'a';
+            if (s1.charAt(i) < 'a') val = 'A'-26;
+            s1_map[s1.charAt(i)-val]--;
+            int j = i + s2.length();
+            if (j < s1.length()) {
+                val = 'a';
+                if (s1.charAt(j) < 'a') val = 'A'-26;
+                s1_map[s1.charAt(j)-val]++;
+            }
         }
 
         return count;
@@ -25,8 +40,11 @@ public class query {
      * @param s1,s2
      */
 
-    public boolean compare(String s1, String s2) {
-        return helper(s1).equals(helper(s2));
+    public boolean compare(int[] s1, int [] s2) {
+        for (int i = 0; i < s1.length;i++) {
+            if (s1[i] != s2[i]) return false;
+        }
+         return true;
 
     }
 
@@ -36,15 +54,17 @@ public class query {
      * @param s1
      * @return Map<Character, Integer>
      */
-    public Map<Character, Integer> helper(String s1) {
-        HashMap<Character, Integer> s1_char = new HashMap<>();
+    public int[] helper(String s1) {
+        int[] chars = new int[52];
+        Arrays.fill(chars, 0);
+        
         for (int i = 0; i < s1.length(); i++) {
-            if (s1_char.containsKey(s1.charAt(i)))
-                s1_char.replace(s1.charAt(i), s1_char.get(s1.charAt(i)) + 1);
-            else
-                s1_char.put(s1.charAt(i), 1);
+            int val = 'a';
+            if (s1.charAt(i) < 'a') val = 'A'-26;
+            chars[s1.charAt(i) - val]++;
+
         }
-        return s1_char;
+        return chars;
 
     }
 

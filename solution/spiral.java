@@ -67,6 +67,7 @@ public class spiral {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        
         int x = scanner.nextInt();
         int y = scanner.nextInt();
         int x_1 = scanner.nextInt();
