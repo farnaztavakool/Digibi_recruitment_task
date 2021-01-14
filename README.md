@@ -13,7 +13,7 @@
         3. considering the current distance will find the next distance and call the function again to repeat the above steps
         4. if the cell is not in the given space will ignore the cell and move to the next one
         5. spiral is done when all of the cells are visited
-**Inputs should be 4 integers inserted on seperate lines**<br />
+
 **o(n^2)**      where n = max(grid.length, grid.width)
 
 ## Task3
