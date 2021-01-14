@@ -41,10 +41,15 @@ public class time_confusion {
     public  static void main(String[] args) {
         ArrayList<String> result = new ArrayList<>();
         Scanner scan=new Scanner(System.in); 
+        System.out.println("Enter the number of tests: ");
+
         int count = scan.nextInt();
         for (int i = 0; i < count;i++) {
+            System.out.println("Enter the "+(i+1)+" test in the format of HH:mm HH:mm HH:mm");
+
             ArrayList<LocalTime> time_list = new ArrayList<>();
             for (int j = 0;j <3;j++) {
+
                 String time=scan.next();  //default format: hh:mm:ss
                 DateTimeFormatter df = DateTimeFormatter.ofPattern("HH:mm");
                 LocalTime lt=LocalTime.parse(time, df); 
@@ -55,6 +60,7 @@ public class time_confusion {
             result.add(solution(time_list));
 
         }
+        scan.close();
         for (String s:result) {
             System.out.println(s);
         }

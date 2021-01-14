@@ -13,12 +13,12 @@
         3. considering the current distance will find the next distance and call the function again to repeat the above steps
         4. if the cell is not in the given space will ignore the cell and move to the next one
         5. spiral is done when all of the cells are visited
-        6. inputs should be 4 integers inserted on seperate lines
+**Inputs should be 4 integers inserted on seperate lines**<br />
 **o(n^2)**      where n = max(grid.length, grid.width)
 
 ## Task3
     To find the actual time between 3 inputs in different test cases:
-        1. input needs to be in the "HH:mm" format 
+        1. input needs to be in the "HH:mm" format and different test cases in different lines
         2. will First sort the times in ascending order
         3. two times can have two differences (H2-H1) or (12 -(H2-H1))
         4. will check the possilbe cases with the differences to find the actual time

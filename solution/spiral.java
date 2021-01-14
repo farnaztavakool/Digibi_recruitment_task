@@ -71,9 +71,16 @@ public class spiral {
 
     public static void main(String[] args) {
 
+        System.out.println("Enter the x coordinate for grid: ");
         int x = scanner.nextInt();
+
+        System.out.println("Enter the y coordinate for grid: ");
         int y = scanner.nextInt();
+
+        System.out.println("Enter the x coordinate for starting position: ");
         int x_1 = scanner.nextInt();
+
+        System.out.println("Enter the y coordinate for starting position: ");
         int y_1 = scanner.nextInt();
         scanner.close();
         // System.out.println((x_1 - 1) * x + y_1);
