@@ -1,6 +1,7 @@
 
 package solution;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class spiral {
@@ -12,7 +13,7 @@ public class spiral {
         y_limit = y;
     }
 
-    public void solution(int x, int y, int distance, int pre, int count) {
+    public ArrayList<Integer> solution(int x, int y, int distance, int pre, int count,ArrayList<Integer> cells) {
 
         if (count != x_limit * y_limit) {
             int j = -distance - 1;
@@ -37,7 +38,8 @@ public class spiral {
                 x += i;
                 if (!(y > y_limit || y <= 0 || x > x_limit || x <= 0)) {
 
-                    System.out.println((x - 1) * y_limit + y);
+                    // System.out.println((x - 1) * y_limit + y);
+                    cells.add((x - 1) * y_limit + y);
                     count++;
                 }
                 if (move == distance) {
@@ -50,7 +52,8 @@ public class spiral {
                 y += i;
 
                 if (!(y > y_limit || y <= 0 || x > x_limit || x <= 0)) {
-                    System.out.println((x - 1) * y_limit + y);
+                    // System.out.println((x - 1) * y_limit + y);
+                    cells.add((x - 1) * y_limit + y);
                     count++;
                 }
 
@@ -58,24 +61,27 @@ public class spiral {
                     break;
 
             }
-            solution(x, y, j, i, count);
+            solution(x, y, j, i, count,cells);
 
         }
-        return;
+        return cells;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        
+
         int x = scanner.nextInt();
         int y = scanner.nextInt();
         int x_1 = scanner.nextInt();
         int y_1 = scanner.nextInt();
         scanner.close();
-        System.out.println((x_1 - 1) * x + y_1);
+        // System.out.println((x_1 - 1) * x + y_1);
         spiral s = new spiral(x, y);
-        s.solution(x_1, y_1, -1, -1, 1);
+        ArrayList<Integer> cell = new ArrayList<Integer>();
+        cell.add((x_1 - 1) * x + y_1);
+        s.solution(x_1, y_1, -1, -1, 1,cell);
+        System.out.println(cell);
 
     }
 }
