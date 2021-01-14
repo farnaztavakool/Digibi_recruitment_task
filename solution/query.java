@@ -35,7 +35,7 @@ public class query {
     }
 
     /**
-     * checks if two strings are anagram
+     * checks if two arrays are equal
      * 
      * @param s1,s2
      */
@@ -49,10 +49,10 @@ public class query {
     }
 
     /**
-     * create a map of the characters in the string with their quantity
+     * fill an array with the number of occurrence of each alphabet in the string
      * 
      * @param s1
-     * @return Map<Character, Integer>
+     * @return in[]
      */
     public int[] helper(String s1) {
         int[] chars = new int[52];
